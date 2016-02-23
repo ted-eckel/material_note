@@ -16,7 +16,6 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Log in / Log out
 - [ ] Create, read, edit, and delete notes
 - [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags
 - [ ] Apply complex styling to notes while editing
 
 ## Design Docs
@@ -94,18 +93,6 @@ user interface.
 Phase 3 adds organization to the Notes. Notes belong to a Notebook,
 which has its own `Index` view.
 
-### Phase 6: Tags (1.5 days)
-
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
-
-- [ ] create `Tag` model and join table
-- build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
-- [ ] Style new elements
-
 ### Phase 7: Allow Complex Styling in Notes (0.5 days)
 
 **objective:** Enable complex styling of notes.
@@ -121,6 +108,18 @@ which has its own `Index` view.
 - [ ] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
 - [ ] Add modals, transitions, and other styling flourishes.
+
+### Bonus Phase: Tags (1.5 days)
+
+**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+
+- [ ] create `Tag` model and join table
+- build out API, Flux loop, and components for:
+  - [ ] fetching tags for notebook
+  - [ ] adding tags to notebook
+  - [ ] creating tags while adding to notebooks
+  - [ ] searching notebooks by tag
+- [ ] Style new elements
 
 ### Bonus Features (TBD)
 - [ ] Search through notes for blocks of text
