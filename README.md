@@ -93,7 +93,7 @@ user interface.
 Phase 3 adds organization to the Notes. Notes belong to a Notebook,
 which has its own `Index` view.
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days)
+### Phase 6: Allow Complex Styling in Notes (0.5 days)
 
 **objective:** Enable complex styling of notes.
 
@@ -101,7 +101,7 @@ which has its own `Index` view.
 - [ ] Use Rails helpers to sanitize HTML before rendering.
 - [ ] Style the new Quill elements.
 
-### Phase 8: Styling Cleanup and Seeding (1 day)
+### Phase 7: Styling Cleanup and Seeding (1 day)
 
 **objective:** Make the site feel more cohesive and awesome.
 

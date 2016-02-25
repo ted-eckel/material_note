@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MaterialNote</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Notes</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if signed_in? %>
+  <%= current_user.username %>
+  <%#= button_to "Sign Out", session_url, :method => :delete, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
+  <form class="" action="<%= session_url %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden"
+        name="authenticity_token"
+        value="<%= form_authenticity_token %>">
+    <button type="submit" name="name" value="Sign Out"
+      class="mdl-button mdl-js-button mdl-button--raised
+        mdl-js-ripple-effect mdl-button--primary
+        mdl-color-text--white">
+      Sign Out
+    </button>
+  </form>
+<%# else %>
+  <%#= link_to "Sign In", new_session_url %>
+  <%#= link_to "Sign Up", new_user_url %>
+<% end %>
+
+<br>
+
+<%= render "layouts/errors" %>
 
 <%= yield %>
 
