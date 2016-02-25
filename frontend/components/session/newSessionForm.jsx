@@ -37,52 +37,64 @@ var NewSessionForm = React.createClass({
   render: function() {
 
     return(
-      <div className="user-form">
-        <h2 className="form-header">Sign in</h2>
-        <form className="new-form" onSubmit={this.submit}>
-
-          <div className="input-field">
-            <label>Username:
-              <input type="text" name="username" autoFocus />
-            </label>
+      <div className="wrapper">
+        <div className="bar-header">
+          <div className="logo-bar"></div>
+        </div>
+        <div id="container-boundingbox" className="wrapper">
+          <div id="container" className="wrapper">
+            <div className="main">
+              <div className="MinimalFormFrame">
+                <div className="heading">
+                  <div className="branding"></div>
+                    <h2>Sign In</h2>
+                </div>
+                <div className="minimal-wrapper">
+                  <div className="minimal-body">
+                    <div className="MinimalLoginForm">
+                      <div className="signin">
+                        <form name="login_form" className="minimal-form" onSubmit={this.submit}>
+                          <div className="success-notification-light"></div>
+                          <ol>
+                            <li className="Row">
+                              <div className="mdl-textfield mdl-js-textfield" id="row-form">
+                                <input className="mdl-textfield__input" type="text" name="user[username]" value="" />
+                                <label className="mdl-textfield__label" for="username">Username</label>
+                              </div>
+                            </li>
+                            <li className="Row">
+                              <div className="mdl-textfield mdl-js-textfield" id="row-form">
+                                <input className="mdl-textfield__input" type="password" name="user[password]" value="" />
+                                <label className="mdl-textfield__label" for="password">Password</label>
+                              </div>
+                            </li>
+                            <li>
+                              <button value="Sign In"
+                                className="mdl-button mdl-js-button mdl-button--raised
+                                  mdl-js-ripple-effect mdl-button--primary mdl-color-text--white
+                                  Btn Btn_emph Btn_super">
+                                  Sign In
+                              </button>
+                            </li>
+                          </ol>
+                        </form>
+                        <ErrorMessages />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="context-switch">
+                  <div className="t-pico">Don't have an account?</div>
+                  <div className="switch">
+                    <a href="#/users/new" id="switch-form switch-link">Create account</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="footer-wrapper">
+            </div>
           </div>
-
-          <div className="input-field">
-            <label>Password:
-              <input type="password" name="password" />
-            </label>
-          </div>
-
-          <ul className="sign-in-buttons group">
-            <li>
-              <button id="new-session-sign-in" className="form-button">Sign In</button>
-            </li>
-            <li id="sign-in-facebook-icon" title="Log in with Facebook!" className="facebook-icon icon-container social-media-login">
-              <a href="/auth/facebook">
-                <i id="fb-icon-new-session" className="fa fa-facebook fa-2x icon-item social-media-icon"></i>
-              </a>
-            </li>
-            <li className="icon-container">
-              <a href="/#">
-                <i className="icon-item home-icon fa fa-home fa-lg"></i>
-              </a>
-            </li>
-          </ul>
-        </form>
-
-        <ErrorMessages />
-
-        <ul className="sign-in-msgs group">
-          <li className="sign-in-msg create-account-msg">
-            <p>Dont have an account?</p>
-            <a href="#/users/new">Create account</a>
-          </li>
-          <li className="sign-in-msg demo-msg">
-            <p>Or give it a try</p>
-            <button className="demo-button" onClick={this.signInAsGuest}>Demo the app</button>
-          </li>
-        </ul>
-
+        </div>
       </div>
     );
   }

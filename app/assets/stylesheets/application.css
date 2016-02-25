@@ -13,3 +13,211 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body {
+   min-height: 100%;
+   height: 100%;
+   background: #f3f3f3;
+ }
+
+ .wrapper {
+   font-family: "Roboto", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   background: #f3f3f3;
+   min-height: 100%;
+   height: 100%
+ }
+
+ .heading {
+   font-weight: 300;
+   text-align: center;
+   color: #aaa;
+   margin: 68px 0 26px;
+   display: block;
+ }
+
+ .minimal-wrapper {
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 0 10px;
+   display: block;
+ }
+
+ .bar-header {
+   position: absolute;
+   height: 4px;
+   width: 100%;
+   top: 0;
+   left: 0;
+   display: block;
+ }
+
+ .bar-header .logo-bar {
+   position: relative;
+   background-color: #2dbe60;
+   height: 4px;
+   width: 100%;
+   z-index: 3;
+   display: block;
+ }
+
+ #container-boundingbox {
+   border: none;
+   min-height: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   display: block;
+ }
+
+ #container {
+   background: 0 0;
+ }
+
+ .main {
+   background: 0 0;
+ }
+
+ .MinimalFormFrame {
+   display: block;
+ }
+
+ .branding {
+   background: no-repeat center top;
+   background-size: 68px 68px;
+ }
+
+ .heading .branding {
+   height: 68px;
+   margin-bottom: 19px;
+   display: block;
+ }
+
+ .minimal-body {
+   background: #fff;
+   max-width: 384px;
+   margin: 0 auto 28px;
+   border: 1px solid #dedede;
+   text-align: left;
+   display: block;
+ }
+
+ .MinimalLoginForm {
+   display: block;
+ }
+
+ .minimal-form {
+   margin: 32px;
+ }
+
+ form ol {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+ }
+
+ ol {
+   display: block;
+   -webkit-margin-before: 1em;
+   -webkit-margin-after: 1em;
+   -webkit-margin-start: 0px;
+   -webkit-margin-end: 0px;
+   -webkit-padding-start: 40px;
+ }
+
+ li {
+   display: list-item;
+   text-align: -webkit-match-parent;
+ }
+
+ label {
+   color: #747474;
+   display: inline-block;
+ }
+
+ .Row {
+   margin-bottom: 2rem;
+ }
+
+ .Row:before, .Row:after {
+   display: table;
+   content: "";
+ }
+
+ .Row:after {
+   clear: both;
+ }
+
+ #email-wrapper {
+   position: relative;
+   display: block;
+ }
+
+ #password-wrapper {
+   position: relative;
+   margin-bottom: 16px;
+   display: block;
+ }
+
+ #context-switch {
+   background: #f3f3f3;
+   text-align: center;
+   display: block;
+ }
+
+ .t-pico {
+   color: #747474;
+   line-height: 1.63636364;
+   font-style: normal;
+   font-weight: 400;
+   font-size: .91666667rem;
+   margin: 0;
+   display: block;
+ }
+
+ #context-switch .switch {
+   margin-top: 6px;
+   display: block;
+ }
+
+ .heading h2 {
+     font-size: 32px;
+     line-height: 36px;
+     margin-bottom: 6px;
+     color: #2dbe60;
+     margin: 0 0;
+ }
+
+ input[type=submit] {
+   -webkit-appearance: button;
+   cursor: pointer;
+ }
+
+ .Btn {
+   width: 100%;
+ }
+
+ .Btn_emph {
+     color: #fff;
+     background-color: #2dbe60;
+ }
+
+ .heading .branding {
+     background: url(materialnotelogo.png) no-repeat center top;
+     background-size: 100px 100px;
+     height: 100px;
+     margin-bottom: 1px;
+     display: block;
+ }
+
+ #context-switch .switch a {
+     transition: all .2s ease;
+     font-style: normal;
+     font-weight: 400;
+     font-size: 16px;
+     line-height: 18px;
+     color: #2dbe60;
+     text-decoration: none;
+ }

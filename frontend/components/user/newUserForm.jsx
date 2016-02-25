@@ -39,47 +39,64 @@ var NewUserForm = React.createClass({
 
   render: function() {
     return(
-      <div className="user-form">
-        <h2 className="form-header">Create Account</h2>
-        <form className="new-form" onSubmit={this.addUser}>
-
-          <div className="input-field">
-            <label>Username:
-              <input type="text" name="username" autoFocus />
-            </label>
+      <div className="wrapper">
+        <div className="bar-header">
+          <div className="logo-bar"></div>
+        </div>
+        <div id="container-boundingbox" className="wrapper">
+          <div id="container" className="wrapper">
+            <div className="main">
+              <div className="MinimalFormFrame">
+                <div className="heading">
+                  <div className="branding"></div>
+                    <h2>Create Account</h2>
+                </div>
+                <div className="minimal-wrapper">
+                  <div className="minimal-body">
+                    <div className="MinimalLoginForm">
+                      <div className="signin">
+                        <form name="login_form" className="minimal-form" onSubmit={this.submit}>
+                          <div className="success-notification-light"></div>
+                          <ol>
+                            <li className="Row">
+                              <div className="mdl-textfield mdl-js-textfield" id="row-form">
+                                <input className="mdl-textfield__input" type="text" name="user[username]" value="" />
+                                <label className="mdl-textfield__label" for="username">Username</label>
+                              </div>
+                            </li>
+                            <li className="Row">
+                              <div className="mdl-textfield mdl-js-textfield" id="row-form">
+                                <input className="mdl-textfield__input" type="password" name="user[password]" value="" />
+                                <label className="mdl-textfield__label" for="password">Password</label>
+                              </div>
+                            </li>
+                            <li>
+                              <button value="Create Account"
+                                className="mdl-button mdl-js-button mdl-button--raised
+                                  mdl-js-ripple-effect mdl-button--primary mdl-color-text--white
+                                  Btn Btn_emph Btn_super">
+                                  Create Account
+                              </button>
+                            </li>
+                          </ol>
+                        </form>
+                        <ErrorMessages />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="context-switch">
+                  <div className="t-pico">Already have an account?</div>
+                  <div className="switch">
+                    <a href="#/session/new" id="switch-form switch-link">Sign In</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="footer-wrapper">
+            </div>
           </div>
-
-          <div className="input-field">
-            <label>Password:
-              <input type="password" name="password" />
-            </label>
-          </div>
-
-          <ul className="new-user-bottom-icons group">
-            <li className="create-account-link">
-              <button className="create-account-button form-button">Create Account!</button>
-            </li>
-            <li className="icon-container new-user-home-icon">
-              <a href="/#">
-                <i className="icon-item home-icon fa fa-home fa-lg"></i>
-              </a>
-            </li>
-          </ul>
-        </form>
-
-        <ErrorMessages />
-
-        <ul className="sign-in-msgs group">
-          <li className="sign-in-msg create-account-msg">
-            <p>Already have an account?</p>
-            <a href="#/session/new">Sign in</a>
-          </li>
-          <li className="sign-in-msg demo-msg">
-            <p>Or give it a try</p>
-            <button className="demo-button" onClick={this.signInAsGuest}>Demo the app</button>
-          </li>
-        </ul>
-
+        </div>
       </div>
     );
   }

@@ -37,40 +37,42 @@ var MaterialNote = React.createClass({
   render: function() {
     return(
       <div className="welcome-landing">
-        <header>
-          <h1 className="welcome-header">Welcome to MaterialNote!</h1>
-          <div className="welcome-messages">
-            <p>MaterialNote is a note-taking application designed
-            to simplify a way for you to organize your notes and
-            simplify your life!</p>
-            <p>MaterialNote is inspired by Evernote and is written using Rails
-            and React</p>
+        <div className="mdl-layout mdl-js-layout">
+          <header className="mdl-layout__header mdl-layout__header--scroll">
+            <div className="mdl-layout__header-row">
+                  //  Title
+              <span className="mdl-layout-title">Title</span>
+                  //  Add spacer, to align navigation to the right
+              <div className="mdl-layout-spacer"></div>
+                  //  Navigation
+              <nav className="mdl-navigation">
+                <a className="mdl-navigation__link" href="">Link</a>
+                <a className="mdl-navigation__link" href="">Link</a>
+                <a className="mdl-navigation__link" href="">Link</a>
+                <a className="mdl-navigation__link" href="">Link</a>
+              </nav>
+            </div>
+          </header>
+          <div className="mdl-layout__drawer">
+            <span className="mdl-layout-title">Title</span>
+            <nav className="mdl-navigation">
+              <a className="mdl-navigation__link" href="">Link</a>
+              <a className="mdl-navigation__link" href="">Link</a>
+              <a className="mdl-navigation__link" href="">Link</a>
+              <a className="mdl-navigation__link" href="">Link</a>
+            </nav>
           </div>
-
-          <button className="form-button" onClick={this.goToSignUp}>Sign Up</button>
-          <button className="form-button" onClick={this.goToSignIn}>Sign In</button>
-
-          <div className="sign-in-msg">
-            <p className="social-message">Not sure if you want to join?</p>
-            <button className="form-button" onClick={this.signInAsGuest}>
-              Demo the app!
-            </button>
-          </div>
-
-          <p className="social-message">Or log in with social media</p>
-          <ul className="social-media-logins group">
-            <li className="facebook-icon facebook-login social-media-login">
-              <a href="/auth/facebook">
-                <i className="fa fa-facebook fa-2x social-media-icon"></i>
-              </a>
-            </li>
-          </ul>
-
-        </header>
+          <main className="mdl-layout__content">
+            <div className="page-content">
+              <h1 className="welcome-header">Welcome to MaterialNote</h1>
+            </div>
+          </main>
+        </div>
       </div>
     );
   }
 });
+
 var router = (
   <Router>
     <Route path="/" component={MaterialNote} />
