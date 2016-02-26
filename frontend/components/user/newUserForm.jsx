@@ -61,17 +61,17 @@ var NewUserForm = React.createClass({
                             <li className="Row">
                               <div className="mdl-textfield mdl-js-textfield" id="row-form">
                                 <input className="mdl-textfield__input" type="text" name="user[username]" value="" />
-                                <label className="mdl-textfield__label" for="username">Username</label>
+                                <label className="mdl-textfield__label" htmlFor="username">Username</label>
                               </div>
                             </li>
                             <li className="Row">
                               <div className="mdl-textfield mdl-js-textfield" id="row-form">
                                 <input className="mdl-textfield__input" type="password" name="user[password]" value="" />
-                                <label className="mdl-textfield__label" for="password">Password</label>
+                                <label className="mdl-textfield__label" htmlFor="password">Password</label>
                               </div>
                             </li>
                             <li>
-                              <button value="Create Account"
+                              <button type="submit" value="Create Account"
                                 className="mdl-button mdl-js-button mdl-button--raised
                                   mdl-js-ripple-effect mdl-button--primary mdl-color-text--white
                                   Btn Btn_emph Btn_super">

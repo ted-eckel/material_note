@@ -3,7 +3,7 @@ var ErrorStore = require('./../stores/errors');
 var ReactRouter = require('react-router');
 var History = ReactRouter.History;
 
-var SessionsApiUti = {
+var SessionsApiUtil = {
 
   mixins: [History],
 
@@ -62,4 +62,4 @@ var SessionsApiUti = {
 
 };
 
-module.exports = SessionsApiUti;
+module.exports = SessionsApiUtil;

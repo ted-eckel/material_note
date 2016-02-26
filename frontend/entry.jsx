@@ -37,37 +37,46 @@ var MaterialNote = React.createClass({
   render: function() {
     return(
       <div className="welcome-landing">
-        <div className="mdl-layout mdl-js-layout">
-          <header className="mdl-layout__header mdl-layout__header--scroll">
-            <div className="mdl-layout__header-row">
-                  //  Title
-              <span className="mdl-layout-title">Title</span>
-                  //  Add spacer, to align navigation to the right
-              <div className="mdl-layout-spacer"></div>
-                  //  Navigation
-              <nav className="mdl-navigation">
-                <a className="mdl-navigation__link" href="">Link</a>
-                <a className="mdl-navigation__link" href="">Link</a>
-                <a className="mdl-navigation__link" href="">Link</a>
-                <a className="mdl-navigation__link" href="">Link</a>
-              </nav>
-            </div>
-          </header>
-          <div className="mdl-layout__drawer">
-            <span className="mdl-layout-title">Title</span>
-            <nav className="mdl-navigation">
-              <a className="mdl-navigation__link" href="">Link</a>
-              <a className="mdl-navigation__link" href="">Link</a>
-              <a className="mdl-navigation__link" href="">Link</a>
-              <a className="mdl-navigation__link" href="">Link</a>
-            </nav>
-          </div>
-          <main className="mdl-layout__content">
-            <div className="page-content">
-              <h1 className="welcome-header">Welcome to MaterialNote</h1>
-            </div>
-          </main>
-        </div>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    			<div className="mdl-layout__header">
+    				<div className="mdl-layout__header-row">
+    					<span className="mdl-layout-title">MaterialNote</span>
+    					<div className="mdl-layout-spacer"></div>
+    					<button id="bars" className= "mdl-color-text--white mdl-button" onClick={this.goToSignIn}>
+    						SIGN IN
+    					</button>
+    					<ul className="mdl-menu mdl-menu--bottom-left mdl-js-menu" htmlFor="bars">
+    						<li className="mdl-menu__item">A</li>
+    						<li className="mdl-menu__item">B</li>
+    						<li disabled className="mdl-menu__item">C</li>
+    						<li className="mdl-menu__item">D</li>
+    					</ul>
+    					<nav className="mdl-navigation">
+    						<a className="mdl-navigation__link" href="#">BAR</a>
+    						<a className="mdl-navigation__link" href="#">BAR</a>
+    						<a className="mdl-navigation__link" href="#">BAR</a>
+    						<div className="material-icons mdl-badge" data-badge="5">account_box</div>
+    					 </nav>
+    					<div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+              				<label className="mdl-button mdl-js-button mdl-button--icon" htmlFor="search"><i className="material-icons">search</i></label>
+              				<div className="mdl-textfield__expandable-holder">
+                				<input className="mdl-textfield__input" type="text" id="search" />
+    				   		</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div className="mdl-layout__drawer">
+    				<span className="mdl-layout-title">
+    				</span>
+    				<nav className="mdl-navigation">
+    				  <a className="mdl-navigation__link" href="">BAR</a>
+    				  <a className="mdl-navigation__link" href="">BAR</a>
+    				  <a className="mdl-navigation__link" href="">BAR</a>
+    				  <a className="mdl-navigation__link" href="">BAR</a>
+    				</nav>
+    			  </div>
+    		</div>
       </div>
     );
   }

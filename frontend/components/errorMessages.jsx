@@ -7,7 +7,6 @@ var ErrorMessages = React.createClass({
     return { messages: ErrorStore.getMessages() };
   },
 
-  //listen to ErrorStore
   componentDidMount: function() {
     this.listenerToken = ErrorStore.addListener(this.showErrors);
   },
