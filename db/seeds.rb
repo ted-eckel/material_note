@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+20.times do |i|
+  8.times do
+    Note.create!(title: "test: #{i}", body: "body-test #{i}", notebook_id: i)
+  end
+end
+
+20.times do |i|
+  Notebook.create!(title: "this is book #{i}", user_id: 1)
+end

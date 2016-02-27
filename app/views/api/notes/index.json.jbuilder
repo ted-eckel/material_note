@@ -1,1 +1,1 @@
-json.message("Hello World")
+json.extract! @notes, :id, :title, :body, :tags

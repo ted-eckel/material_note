@@ -1,0 +1,8 @@
+var NoteConstants = {
+  CREATE_NOTE: "CREATE_NOTE",
+  RECEIVED_ALL_NOTES: "RECEIVED_ALL_NOTES",
+  UPDATE_NOTE: "UPDATE_NOTE",
+  DELETE_NOTE: "DELETE_NOTE"
+};
+
+module.exports = NoteConstants;

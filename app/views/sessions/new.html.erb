@@ -14,7 +14,7 @@
             <div class="minimal-body">
               <div class="MinimalLoginForm">
                 <div class="signin">
-                  <form action="<%= session_url %>" method="post" name="login_form" class="minimal-form">
+                  <form action="/session" method="post" name="login_form" class="minimal-form">
                     <%= auth_token_input %>
                     <div class="success-notification-light"></div>
                     <ol>
@@ -23,20 +23,12 @@
                           <input class="mdl-textfield__input" type="text" name="user[username]" value="">
                           <label class="mdl-textfield__label" for="username">Username</label>
                         </div>
-                        <!-- <label for="username">Username</label>
-                        <div id="email-wrapper">
-                          <input maxlength="255" type="text" name="user[username]" value="" class="TextInput TextInput_large">
-                        </div> -->
                       </li>
                       <li class="Row">
                         <div class="mdl-textfield mdl-js-textfield" id="row-form">
                           <input class="mdl-textfield__input" type="password" name="user[password]" value="">
                           <label class="mdl-textfield__label" for="password">Password</label>
                         </div>
-                        <!-- <label for="password">Password</label>
-                        <div id="password-wrapper">
-                          <input maxlength="64" type="password" name="user[password]" value="" class="TextInput TextInput_large">
-                        </div> -->
                       </li>
                       <li>
                         <button type="submit" value="Sign In"
