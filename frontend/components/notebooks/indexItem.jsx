@@ -23,7 +23,7 @@ var NotebookIndexItem = React.createClass({
         </div>
         <br></br>
         <p onClick={this.deleteNotebook} className='trash'>
-          <i className="fa fa-trash"></i>
+          <i className="material-icons">delete</i>
         </p>
       </div>
     );
