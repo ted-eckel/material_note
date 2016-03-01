@@ -17,7 +17,7 @@ var NoteIndexItem = React.createClass({
         <span>{this.props.note.title}</span>
         <br></br>
         <p onClick={this.deleteNote} className='trash'>
-          <i className="fa fa-trash"></i>
+          <i className="material-icons">clear</i>
         </p>
       </div>
     );

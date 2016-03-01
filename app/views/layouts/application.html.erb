@@ -2,18 +2,22 @@
 <html>
 <head>
   <title>Notes</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script src="//cdn.quilljs.com/0.16.0/quill.js"></script>
+  <link rel="stylesheet" href="//cdn.quilljs.com/0.16.0/quill.snow.css" />
 </head>
 <body>
 
-<% if signed_in? %>
-  <%= current_user.username %>
+<%# if signed_in? %>
+  <%#= current_user.username %>
   <%#= button_to "Sign Out", session_url, :method => :delete, {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'} %>
-  <form class="" action="<%= session_url %>" method="post">
+  <!-- <form class="" action="<%= session_url %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="hidden"
         name="authenticity_token"
@@ -24,11 +28,15 @@
         mdl-color-text--white">
       Sign Out
     </button>
-  </form>
+  </form> -->
 <%# else %>
   <%#= link_to "Sign In", new_session_url %>
   <%#= link_to "Sign Up", new_user_url %>
-<% end %>
+<%# end %>
+
+<nav>
+  <header><h1>MaterialNote</h1></header>
+</nav>
 
 <br>
 

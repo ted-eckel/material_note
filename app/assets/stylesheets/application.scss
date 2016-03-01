@@ -14,10 +14,21 @@
  *= require_self
  */
 
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "notebook_index.scss";
+ @import "material.min.css";
+ @import "sidebar.scss";
+ @import "notebooks.scss";
+ @import "notes.scss";
+ @import "static_pages.scss";
+ @import url(https://fonts.googleapis.com/css?family=Arvo|Pacifico);
+
  html, body {
    min-height: 100%;
    height: 100%;
    background: #f3f3f3;
+   font-family: "Roboto", sans-serif;;
  }
 
  .wrapper {
@@ -221,3 +232,141 @@
      color: #2dbe60;
      text-decoration: none;
  }
+
+ #animated-fab-button--create {
+    transition: 150ms ease all;
+    -webkit-transition: 150ms ease all;
+    display: block;
+    position: fixed;
+    right: 40px;
+    bottom: 36px;
+    z-index: 999;
+ }
+
+ #animated-fab-button--create .hover {
+   display: none;
+ }
+
+ #animated-fab-button--create:hover .normal {
+   display: none;
+ }
+
+ #animated-fab-button--create:hover .hover {
+   display: inline;
+ }
+
+ #animated-fab-button--create:hover {
+    transform: scale(1) rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
+ }
+
+
+/*------------------------------------------------ */
+
+ul {
+  list-style: none;
+}
+
+#root {
+   height: 100%;
+   width: 100%;
+   position: relative;
+   overflow-x: hidden;
+   overflow-y: hidden;
+   background-color: #F2F2F2;
+ }
+
+ nav {
+   background: #4CAF50;
+   height: 7%;
+   min-height: 70px;
+   border-right-width: 0;
+ }
+
+ nav header h1 {
+   padding-top: 4px;
+   margin-top: 0px;
+   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+   font-size: 2em;
+   height: 100%;
+   text-align: center;
+   color: white;
+ }
+
+ .signout-button {
+   position: absolute;
+   top: 19px;
+   right: 25px;
+ }
+
+.container.group {
+  outline: 0;
+  width: 64%;
+  overflow-y: auto;
+  width: 70%;
+  position: absolute;
+  right: -14px;
+}
+
+.save-button:hover {
+ cursor: pointer;
+ background-color: black;
+ color: white;
+}
+
+.save-button {
+  margin-top: 15px;
+  border-radius: 2px;
+}
+
+.ql-picker-label.ql-active {
+  overflow: hidden;
+}
+
+.quill-contents.ql-container.ql-snow {
+  background-color: white;
+  border-radius: 10px;
+  min-height: 900px;
+}
+
+.allnotes-container, .notebook-container,
+.allnotes-container.active, .notebook-container.active  {
+  background-color: white;
+  height: 100%;
+}
+
+.newnotebook-button, .backtonotebooks-button {
+  top: 10px;
+  right: 10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.newnotebook-button:hover {
+ cursor: pointer;
+}
+
+.ql-snow.ql-toolbar .ql-picker .ql-picker-label.ql-active, .ql-snow.ql-toolbar .ql-picker .ql-picker-label:hover {
+  color: black;
+}
+
+.fa-trash {
+ padding-top: 8px;
+}
+
+.form-label {
+ background-color: gainsboro;
+ width: 100%;
+ border-right: none;
+ border-left: none;
+}
+
+.form-control {
+ margin-bottom: 4px;
+}
+
+.top-of-notebook-index {
+ text-align: right;
+ padding-right: 15px;
+}

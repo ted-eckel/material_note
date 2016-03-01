@@ -14,7 +14,7 @@ class Api::NotesController < ApplicationController
   end
 
   def index
-    if params[:notebook_id] != "null"
+    if params[:notebook_id] != nil
       @notebook = Notebook.find(params[:notebook_id])
       @notes = @notebook.notes
     else

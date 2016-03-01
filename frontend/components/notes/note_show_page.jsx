@@ -1,7 +1,7 @@
 var React = require('react');
 var NoteStore = require('../../stores/note_store');
 var ApiUtil = require('../../util/api_util');
-var ReactQuill = require("../../vendor/react-quill");
+var ReactQuill = require("../../../node_modules/react-quill");
 
 var NoteShowPage = React.createClass({
 
@@ -44,7 +44,7 @@ var NoteShowPage = React.createClass({
 
     return (
       <div className="NoteShowPage">
-        <button className="save-button" onClick={this.saveChanges}>SAVE CHANGES</button>
+        <button className="save-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect" onClick={this.saveChanges}>SAVE CHANGES</button>
         <ReactQuill theme="snow"
                     value={this.state.note.body}
                     onChange={this.onTextChange}/>

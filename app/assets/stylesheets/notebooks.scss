@@ -1,0 +1,75 @@
+// Place all the styles related to the Notebooks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container{
+  outline: 1px solid;
+  width: 1000px
+}
+
+.notebook-container{
+  float: left;
+  width: 30%;
+}
+
+.notes-container{
+  float: right;
+  width: 70%
+}
+
+.container.group {
+  width: 70%;
+  float: right;
+  height: 100%;
+  border: none;
+}
+
+
+ .allnotes-container {
+   opacity: 0;
+   left: -400px;
+   position: relative;
+   transition: left 0.5s linear, opacity 0.5s ease-out;
+   width: 100%;
+ }
+
+ .allnotes-container.active {
+   opacity: 1;
+   left: 0px;
+   position: relative;
+   height: 100%;
+   overflow-y: auto;
+   box-shadow: 3px 0px 15px black;
+ }
+
+
+ .notebook-container {
+   opacity: 0;
+   left: -400px;
+   position: relative;
+   transition: left 0.5s linear, opacity 0.5s ease-out;
+   width: 100%;
+ }
+
+ .notebook-container.active {
+   opacity: 1;
+   left: 0px;
+   position: relative;
+   height: 100%;
+   overflow-y: auto;
+   box-shadow: 3px 0px 15px black;
+
+ }
+
+ .trash {
+   float: right;
+   position: absolute;
+   bottom: -3px;
+   right: 10px;
+   color: gainsboro;
+ }

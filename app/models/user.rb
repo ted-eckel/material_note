@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   has_many :notes,
   through: :notebooks,
-  source: :note
+  source: :notes
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

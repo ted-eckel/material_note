@@ -1,45 +1,59 @@
-<div class="welcome-landing">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <div class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">MaterialNote</span>
-        <div class="mdl-layout-spacer"></div>
-        <form action="<%= new_session_url %>">
-          <button id="bars" class="mdl-color-text--white mdl-button">
-            SIGN IN
-          </button>
-        </form>
+<% if current_user %>
+  <form action="<%= new_session_url %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" name="button"
+      class="signout-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">
+      Sign Out
+    </button>
+  </form>
+  <!-- <button class="signout-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+    <%#= button_to "Sign Out", session_url, method: :delete %>
+  </button> -->
+  <div id="root"></div>
+<% else %>
+  <div class="welcome-landing">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <div class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">MaterialNote</span>
+          <div class="mdl-layout-spacer"></div>
+          <form action="<%= new_session_url %>">
+            <button id="bars" class="mdl-color-text--white mdl-button">
+              SIGN IN
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">
+        </span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">BAR</a>
+          <a class="mdl-navigation__link" href="">BAR</a>
+          <a class="mdl-navigation__link" href="">BAR</a>
+          <a class="mdl-navigation__link" href="">BAR</a>
+        </nav>
+        </div>
+    </div>
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Welcome</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        MaterialNote is an Evernote inspired web application
+        built with Rails, React, and Google's Material Design.
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="<%= new_user_url %>" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          Get Started
+        </a>
+      </div>
+      <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--colored mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">share</i>
+        </button>
       </div>
     </div>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">
-      </span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">BAR</a>
-        <a class="mdl-navigation__link" href="">BAR</a>
-        <a class="mdl-navigation__link" href="">BAR</a>
-        <a class="mdl-navigation__link" href="">BAR</a>
-      </nav>
-      </div>
   </div>
-  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">Welcome</h2>
-    </div>
-    <div class="mdl-card__supporting-text">
-      MaterialNote is an Evernote inspired web application
-      built with Rails, React, and Google's Material Design.
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <a href="<%= new_user_url %>" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-        Get Started
-      </a>
-    </div>
-    <div class="mdl-card__menu">
-      <button class="mdl-button mdl-button--colored mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-        <i class="material-icons">share</i>
-      </button>
-    </div>
-  </div>
-</div>
+<% end %>

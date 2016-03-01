@@ -15,12 +15,20 @@ var NoteFormModal = React.createClass({
   render: function () {
     return (
       <li onClick={this.showModal}
-          className="upper-buttons new-note"
           data-content="Add Note">
           <Modal ref="modal">
             <NoteForm hideModal={this.hideModal}/>
           </Modal>
-          <i className="fa fa-plus fa-2x"></i>
+          <button
+            id="animated-fab-button--create"
+            className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color-text--white mdl-color--primary mdl-button--colored mdl-shadow--4dp">
+            <span className="hover">
+              <i className="material-icons">create</i>
+            </span>
+            <span className="normal">
+              <i className="material-icons">add</i>
+            </span>
+          </button>
       </li>
     );
   }

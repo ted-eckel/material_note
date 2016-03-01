@@ -25,22 +25,19 @@ var Sidebar = React.createClass({
     return (
       <div className="sidebar">
         <div>
-          <img className="logo" src="/assets/logo" />
+          <img className="logo" src="/assets/materialnotelogo" />
           <div className='sidebar-buttons'>
-          <ul>
-            <NoteFormModal/>
-          </ul>
             <ul className="lower-ul">
               <li onClick={this.showNotes}
-                  className="lower-buttons notes"
+                  className="lower-buttons notes mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color-text--white mdl-color--primary mdl-button--colored mdl-shadow--4dp"
                   data-content="Notes">
-                  <i className="fa fa-sticky-note fa-2x"></i>
+                  <i className="material-icons">note</i>
               </li>
               <li onClick={this.activateNotebooks}
                   ref={function(ref){this.lowerButtonsNotebooks = ref;}.bind(this)}
-                  className="lower-buttons notebooks"
+                  className="lower-buttons notebooks mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color-text--white mdl-color--primary mdl-button--colored mdl-shadow--4dp"
                   data-content="Notebooks">
-                  <i className="fa fa-book fa-2x"></i>
+                  <i className="material-icons">book</i>
               </li>
             </ul>
           </div>

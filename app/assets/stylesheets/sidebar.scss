@@ -1,0 +1,171 @@
+.upper-button-img {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar {
+  padding: 12px 0;
+  background-color: #4CAF50;
+  height: 100%;
+  top: 0px;
+  float: left;
+  width: 90px;
+  z-index: 1;
+  position: fixed;
+}
+
+.sidebar-buttons {
+  margin-top: 50px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  display: block;
+}
+
+.lower-ul .fa {
+  position: relative;
+  top: 8px;
+}
+
+.upper-buttons {
+  text-align: center;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  padding: 8px 5px 5px;
+  margin: 0 auto;
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  transition: background 0.2s ease-in-out;
+  display: block;
+}
+
+.upper-buttons, .lower-buttons {
+  position: relative;
+}
+
+.upper-buttons:nth-child(2) {
+  margin: 12px auto;
+}
+
+.upper-buttons:hover {
+  cursor: pointer;
+  background-color: gainsboro;
+}
+
+.lower-ul {
+  margin-top: 90px;
+}
+
+.lower-buttons {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #eee;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  transition: background 0.2s ease-in-out;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.shortcuts:hover {
+  background-color: #2dbe60;
+  cursor: pointer;
+}
+
+.notes:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+
+.notebooks:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+
+
+
+.tags:hover {
+  background-color: #2dbe60;
+  cursor: pointer;
+}
+
+
+.upper-buttons:before {
+  content: attr(data-content);
+  position: absolute;
+  left: 50px;
+  visibility: hidden;
+  white-space: nowrap;
+  color: white;
+  background-color: #5C5C5C;
+  font-size: 12px;
+  font-family: "arvo";
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border-radius: 3px;
+  text-align: center;
+  transition: visibility 200ms ease-out 0s;
+}
+
+.lower-buttons:before {
+  content: attr(data-content);
+  position: absolute;
+  top: 6px;
+  left: 50px;
+  visibility: hidden;
+  white-space: nowrap;
+  color: white;
+  background-color: #5C5C5C;
+  font-size: 12px;
+  font-family: "arvo";
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border-radius: 3px;
+  text-align: center;
+  transition: visibility 200ms ease-out 0s;
+}
+
+.upper-buttons:hover:before, .upper-buttons:hover:after, .lower-buttons:hover:before, .lower-buttons:hover:after {
+  visibility: visible;
+  transition: visibility 200ms linear 500ms;
+}
+
+.upper-buttons:after {
+  display: block;
+  content: "";
+  top: 16px;
+  left: 45px;
+  position: absolute;
+  margin: auto;
+  border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 5px solid #5c5c5c;
+  visibility: hidden;
+  transition: visibility 200ms ease-out 0s;
+}
+
+.lower-buttons:after {
+  display: block;
+  content: "";
+  top: 14px;
+  left: 45px;
+  position: absolute;
+  margin: auto;
+  border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 5px solid #5c5c5c;
+  visibility: hidden;
+  transition: visibility 200ms ease-out 0s;
+}
+
+.sidebar-parent {
+  height: 100%;
+}

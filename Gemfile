@@ -31,6 +31,9 @@ gem 'kaminari'
 gem 'omniauth-facebook'
 gem 'figaro'
 
+gem 'bootstrap-sass'
+gem 'react-bootstrap-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

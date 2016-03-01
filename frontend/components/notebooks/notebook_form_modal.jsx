@@ -13,7 +13,7 @@ var NotebookFormModal = React.createClass({
 
   render: function () {
     return (
-      <button className="newnotebook-button" onClick={this.showModal}>
+      <button className="newnotebook-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect" onClick={this.showModal}>
         <span>
           Create Notebook
         </span>

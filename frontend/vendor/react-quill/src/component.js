@@ -1,25 +1,13 @@
 'use strict';
 
 var React = require('react'),
+	ReactDOM = require('react-dom'),
 	QuillToolbar = require('./toolbar'),
 	QuillMixin = require('./mixin'),
 	T = React.PropTypes;
 
-// Support React 0.11 and 0.12
-// FIXME: Remove with React 0.13
-if (React.createFactory) {
-	QuillToolbar = React.createFactory(QuillToolbar);
-}
-
-// Support React 0.12 and 0.13+
-// FIXME: Remove with React 0.13
-if (React.cloneElement) {
-	var cloneElement = React.cloneElement;
-} else if (React.addons && React.addons.cloneWithProps) {
-	var cloneElement = React.addons.cloneWithProps;
-} else {
-	throw new Error('React addons are required when using React 0.12 or less.');
-}
+// FIXME: Remove with the switch to JSX
+QuillToolbar = React.createFactory(QuillToolbar);
 
 var QuillComponent = React.createClass({
 
@@ -35,7 +23,7 @@ var QuillComponent = React.createClass({
 		defaultValue: T.string,
 		readOnly: T.bool,
 		modules: T.object,
-		toolbar: T.array,
+		toolbar: T.oneOfType([ T.array, T.oneOf([false]), ]),
 		formats: T.array,
 		styles: T.oneOfType([ T.object, T.oneOf([false]) ]),
 		theme: T.string,
@@ -66,7 +54,8 @@ var QuillComponent = React.createClass({
 			className: '',
 			theme: 'base',
 			modules: {
-				'link-tooltip': true
+				'link-tooltip': true,
+				'image-tooltip': true
 			}
 		};
 	},
@@ -124,9 +113,9 @@ var QuillComponent = React.createClass({
 
 		// NOTE: Custom formats will be stripped when creating
 		//       the editor, since they are not present there yet.
-		//       Therefore, we re-set the contents from the props
-		this.setState({ editor:editor }, function () {
-			this.setEditorContents(editor, this.props.value);
+		//       Therefore, we re-set the contents from state.
+		this.setState({ editor:editor }, function() {
+			this.setEditorContents(editor, this.state.value);
 		}.bind(this));
 	},
 
@@ -182,21 +171,25 @@ var QuillComponent = React.createClass({
 			modules:      this.props.modules,
 			pollInterval: this.props.pollInterval
 		};
-		// Unless we're redefining the toolbar,
-		// attach to the default one as a ref.
-		if (!config.modules.toolbar) {
+		// Unless we're redefining the toolbar, or it has been explicitly
+		// disabled, attach to the default one as a ref.
+		if (this.props.toolbar !== false && !config.modules.toolbar) {
 			// Don't mutate the original modules
 			// because it's shared between components.
 			config.modules = JSON.parse(JSON.stringify(config.modules));
 			config.modules.toolbar = {
-				container: this.refs.toolbar.getDOMNode()
+				container: ReactDOM.findDOMNode(this.refs.toolbar)
 			};
 		}
 		return config;
 	},
 
+	getEditor: function() {
+		return this.state.editor;
+	},
+
 	getEditorElement: function() {
-		return this.refs.editor.getDOMNode();
+		return ReactDOM.findDOMNode(this.refs.editor);
 	},
 
 	getEditorContents: function() {
@@ -216,17 +209,20 @@ var QuillComponent = React.createClass({
 			// Clone children to own their refs.
 			return React.Children.map(
 				this.props.children,
-				function(c) { return cloneElement(c, { ref: c.ref }) }
+				function(c) { return React.cloneElement(c, { ref: c.ref }) }
 			);
 		} else {
 			return [
 				// Quill modifies these elements in-place,
 				// so we need to re-render them every time.
-				QuillToolbar({
+
+				// Render the toolbar unless explicitly disabled.
+				this.props.toolbar !== false? QuillToolbar({
 					key: 'toolbar-' + Math.random(),
 					ref: 'toolbar',
 					items: this.props.toolbar
-				}),
+				}) : false,
+
 				React.DOM.div({
 					key: 'editor-' + Math.random(),
 					ref: 'editor',
@@ -241,7 +237,7 @@ var QuillComponent = React.createClass({
 		return React.DOM.div({
 			id: this.props.id,
 			style: this.props.style,
-			className: 'quill ' + this.props.className,
+			className: ['quill'].concat(this.props.className).join(' '),
 			onKeyPress: this.props.onKeyPress,
 			onKeyDown: this.props.onKeyDown,
 			onKeyUp: this.props.onKeyUp,
@@ -250,22 +246,22 @@ var QuillComponent = React.createClass({
 		);
 	},
 
-	onEditorChange: function(value, delta, source) {
+	onEditorChange: function(value, delta, source, editor) {
 		if (value !== this.getEditorContents()) {
 			this.setState({ value: value });
 			if (this.props.onChange) {
-				this.props.onChange(value, delta, source);
+				this.props.onChange(value, delta, source, editor);
 			}
 		}
 	},
 
-	onEditorChangeSelection: function(range, source) {
+	onEditorChangeSelection: function(range, source, editor) {
 		var s = this.getEditorSelection() || {};
 		var r = range || {};
 		if (r.start !== s.start || r.end !== s.end) {
 			this.setState({ selection: range });
 			if (this.props.onChangeSelection) {
-				this.props.onChangeSelection(range, source);
+				this.props.onChangeSelection(range, source, editor);
 			}
 		}
 	},
