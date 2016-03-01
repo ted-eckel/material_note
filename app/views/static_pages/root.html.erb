@@ -1,5 +1,5 @@
 <% if current_user %>
-  <form action="<%= new_session_url %>" method="post">
+  <form action="<%= session_url %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <button type="submit" name="button"
       class="signout-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">
