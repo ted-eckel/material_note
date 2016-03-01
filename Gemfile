@@ -33,6 +33,7 @@ gem 'figaro'
 
 gem 'bootstrap-sass'
 gem 'react-bootstrap-rails'
+gem 'rails_12factor'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
