@@ -25,7 +25,7 @@ var Sidebar = React.createClass({
     return (
       <div className="sidebar">
         <div>
-          <img className="logo" src="/assets/materialnotelogo" />
+          {/*<img className="logo" src="/assets/materialnotelogo" />*/}
           <div className='sidebar-buttons'>
             <ul className="lower-ul">
               <li onClick={this.showNotes}

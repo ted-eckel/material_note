@@ -3,7 +3,7 @@
     <input type="hidden" name="_method" value="delete">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <button type="submit" name="button"
-      class="signout-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">
+      class="signout-button mdl-button mdl-js-button mdl-button--colored mdl-color-text--white">
       Sign Out
     </button>
   </form>
@@ -20,7 +20,7 @@
           <span class="mdl-layout-title">MaterialNote</span>
           <div class="mdl-layout-spacer"></div>
           <form action="<%= new_session_url %>">
-            <button id="bars" class="mdl-color-text--white mdl-button">
+            <button class="mdl-color-text--white mdl-button">
               SIGN IN
             </button>
           </form>

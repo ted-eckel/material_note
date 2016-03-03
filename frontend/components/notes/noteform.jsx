@@ -47,7 +47,7 @@ var NoteForm = React.createClass({
            <textarea className='form-control' type='text' valueLink={this.linkState('body')}/>
           </div>
 
-        <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">Create Note</button>
+        <button type="submit" className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">Create Note</button>
       </form>
     );
   }

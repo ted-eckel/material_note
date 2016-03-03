@@ -261,6 +261,9 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
  }
 
+.mdl-layout__drawer-button {
+  color: white !important;
+}
 
 /*------------------------------------------------ */
 
@@ -271,7 +274,7 @@ ul {
 #root {
    height: 100%;
    width: 100%;
-   position: relative;
+  //  position: relative;
    overflow-x: hidden;
    overflow-y: hidden;
    background-color: #F2F2F2;
@@ -296,8 +299,9 @@ ul {
 
  .signout-button {
    position: absolute;
-   top: 19px;
+   top: 16px;
    right: 25px;
+   z-index: 100;
  }
 
 .container.group {

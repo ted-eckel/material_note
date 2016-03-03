@@ -20,7 +20,18 @@ var App = React.createClass({
   render: function(){
     return (
         <div className="sidebar-parent">
-          <Slideout/>
+          <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header className="mdl-layout__header">
+              <div className="mdl-layout__header-row">
+                <span className="mdl-layout-title mdl-color-text--white">MaterialNote</span>
+                <div className="mdl-layout-spacer"></div>
+              </div>
+            </header>
+            <div className="mdl-layout__drawer">
+              <Slideout/>
+            </div>
+          </div>
+          {/*<Slideout/>*/}
           <Sidebar/>
           <NoteFormModal/>
           <div className='container group'>

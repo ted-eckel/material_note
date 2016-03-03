@@ -23,7 +23,7 @@ var NoteBookForm = React.createClass({
           <label className='form-label'>Notebook Title:</label>
             <input className='form-control' type='text' valueLink={this.linkState('title')}/>
         </div>
-        <button>Create Notebook</button>
+        <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">Create Notebook</button>
       </form>
     );
   }
