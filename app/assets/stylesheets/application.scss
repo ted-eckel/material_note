@@ -315,10 +315,15 @@ ul {
 
 .container.group {
   outline: 0;
-  overflow-y: auto;
-  width: 50%;
-  position: absolute;
-  right: -14px;
+  // overflow-y: auto;
+  width: 744.5px;
+  margin: 0 auto;
+  // position: absolute;
+  // right: -14px;
+  // align-self: center;
+  // display: block !important;
+  // margin-left: auto !important;
+  // margin-right: auto !important;
 }
 
 .save-button:hover {

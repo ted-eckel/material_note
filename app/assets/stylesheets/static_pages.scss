@@ -21,19 +21,27 @@
 
 .demo-card-wide.mdl-card {
   width: 512px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 279px;
+  margin: auto;
 }
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
+  background: url("https://c1.staticflickr.com/1/69/157615880_0701e0c107_b.jpg") center / cover;
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
 
 .demo-card-wide {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
+  // position: absolute;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // margin: auto;
 }
