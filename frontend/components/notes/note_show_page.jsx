@@ -44,6 +44,10 @@ var NoteShowPage = React.createClass({
 
     return (
       <div className="NoteShowPage">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <button className="save-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect" onClick={this.saveChanges}>SAVE CHANGES</button>
         <ReactQuill theme="snow"
                     value={this.state.note.body}

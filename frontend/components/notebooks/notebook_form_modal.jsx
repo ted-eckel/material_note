@@ -13,13 +13,11 @@ var NotebookFormModal = React.createClass({
 
   render: function () {
     return (
-      <button className="newnotebook-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect" onClick={this.showModal}>
-        <span>
-          Create Notebook
-        </span>
-          <Modal ref="modal">
-            <NotebookForm hideModal={this.hideModal}/>
-          </Modal>
+      <button className="btn-floating mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-color--primary mdl-color-text--white mdl-js-ripple-effect" onClick={this.showModal}>
+        <i className="material-icons">book</i>
+        <Modal ref="modal">
+          <NotebookForm hideModal={this.hideModal}/>
+        </Modal>
       </button>
     );
   }

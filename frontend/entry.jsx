@@ -10,7 +10,8 @@ var ReactDOM = require('react-dom'),
     ReactQuill = require("../node_modules/react-quill"),
     NoteShowPage = require('./components/notes/note_show_page'),
     Slideout = require('./components/slideout'),
-    NoteFormModal = require('./components/notes/form_modal');
+    NoteFormModal = require('./components/notes/form_modal'),
+    NotebookFormModal = require('./components/notebooks/notebook_form_modal');
 
 var App = React.createClass({
   getInitialState: function () {
@@ -19,25 +20,29 @@ var App = React.createClass({
 
   render: function(){
     return (
-        <div className="sidebar-parent">
-          <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-            <header className="mdl-layout__header">
-              <div className="mdl-layout__header-row">
-                <span className="mdl-layout-title mdl-color-text--white">MaterialNote</span>
-                <div className="mdl-layout-spacer"></div>
-              </div>
-            </header>
-            <div className="mdl-layout__drawer">
-              <Slideout/>
+      <div className="sidebar-parent">
+        <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header className="mdl-layout__header">
+            <div className="mdl-layout__header-row">
+              <span className="mdl-layout-title mdl-color-text--white">MaterialNote</span>
+              <div className="mdl-layout-spacer"></div>
             </div>
-          </div>
-          {/*<Slideout/>*/}
-          <Sidebar/>
-          <NoteFormModal/>
-          <div className='container group'>
-            {this.props.children}
+          </header>
+          <div className="mdl-layout__drawer">
+            <Slideout/>
           </div>
         </div>
+        <Sidebar/>
+        <div id="floating-action-menu-thing" className="fixed-action-btn">
+          <NoteFormModal/>
+          <ul>
+            <li><NotebookFormModal/></li>
+          </ul>
+        </div>
+        <div className='container group'>
+          {this.props.children}
+        </div>
+      </div>
     );
   }
 });
