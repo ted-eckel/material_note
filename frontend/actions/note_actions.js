@@ -4,28 +4,28 @@ var NoteConstants = require('../constants/note_constants');
 var NoteActions = {
   receiveNotes: function (notes) {
     AppDispatcher.dispatch({
-      actionType: NoteConstants.RECEIVED_ALL_NOTES,
+      actionType: NoteConstants.ALL_NOTES_RECEIVED,
       notes: notes
     });
   },
 
   addNote: function (note) {
     AppDispatcher.dispatch({
-      actionType: NoteConstants.CREATE_NOTE,
+      actionType: NoteConstants.NOTE_CREATED,
       note: note
     });
   },
 
   updateNote: function (note) {
     AppDispatcher.dispatch({
-      actionType: NoteConstants.UPDATE_NOTE,
+      actionType: NoteConstants.NOTE_UPDATED,
       note: note
     });
   },
 
   deleteNote: function (note) {
     AppDispatcher.dispatch({
-      actionType: NoteConstants.DELETE_NOTE,
+      actionType: NoteConstants.NOTE_DELETED,
       note: note
     });
   }
