@@ -49,11 +49,20 @@
         <a href="<%= new_user_url %>" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
           Get Started
         </a>
+        <form id="main-page-guest-login" action="/session" method="post" name="login_form">
+          <%= auth_token_input %>
+          <input type="hidden" name="user[username]" value="guest">
+          <input type="hidden" name="user[password]" value="Uu2U3vMZ3k8FtB">
+          <button id="main-page-guest-login-button" type="submit" value="Sign In"
+            class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+              Guest Login
+          </button>
+        </form>
       </div>
       <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <!-- <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
           <i class="material-icons">share</i>
-        </button>
+        </button> -->
       </div>
     </div>
   </div>

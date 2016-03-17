@@ -4,14 +4,14 @@ var NotebookConstants = require('../constants/notebook_constants');
 var NotebookActions = {
   receiveAllNotebooks: function(notebooks){
     AppDispatcher.dispatch({
-      actionType: NotebookConstants.RECEIVE_ALL_NOTEBOOKS,
+      actionType: NotebookConstants.ALL_NOTEBOOKS_RECEIVED,
       notebooks: notebooks
     });
   },
 
   addNotebook: function (notebook) {
     AppDispatcher.dispatch({
-      actionType: NotebookConstants.ADD_NOTEBOOK,
+      actionType: NotebookConstants.NOTEBOOK_ADDED,
       notebook: notebook
     });
   },

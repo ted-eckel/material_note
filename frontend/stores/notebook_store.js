@@ -26,11 +26,11 @@ NoteBookStore.deleteNotebook = function (id) {
 
 NoteBookStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
-    case NotebookConstants.RECEIVE_ALL_NOTEBOOKS:
+    case NotebookConstants.ALL_NOTEBOOKS_RECEIVED:
       resetNoteBooks(payload.notebooks);
       NoteBookStore.__emitChange();
       break;
-    case NotebookConstants.ADD_NOTEBOOK:
+    case NotebookConstants.NOTEBOOK_ADDED:
       NoteBookStore.addNotebook(payload.notebook);
       NoteBookStore.__emitChange();
       break;

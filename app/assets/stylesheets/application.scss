@@ -274,6 +274,19 @@
   z-index: 998;
 }
 
+#main-page-guest-login {
+  float: right;
+  display: inline;
+}
+
+#main-page-guest-login-button:hover {
+  text-decoration: underline !important;
+}
+
+.mdl-textfield__label:after {
+  bottom: 15px !important;
+}
+
 /*------------------------------------------------ */
 
 ul {
