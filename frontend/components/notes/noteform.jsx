@@ -25,7 +25,7 @@ var NoteForm = React.createClass({
   },
 
   render: function(){
-    var NotebookDropdDownOptions = NotebookStore.all().map(function (notebook, idx) {
+    var NotebookDropDownOptions = NotebookStore.all().map(function (notebook, idx) {
       return (<option value={notebook.id}
                       key={idx}>{notebook.title}
               </option>);
@@ -35,19 +35,58 @@ var NoteForm = React.createClass({
       <form role='form' onSubmit={this.createNote}>
 
         <div className='form-group'>
-         <label className='form-label'>Notebook:</label>
-           <select className='form-control' id="selectList">
-             {NotebookDropdDownOptions}
+         <label className='form-label'>
+           <br/>
+           Notebook:
+           <br/>
+           <br/>
+         </label>
+           <br/>
+           <br/>
+           <select className='form-control' id="selectList" style={{width: '300px', margin: '0 auto'}}>
+             {NotebookDropDownOptions}
+           </select>
+           <br/>
+           <br/>
+         {/*
+           <select className="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect form-control" id="selectList">
+           {NotebookDropDownOptions}
            </select>
 
-             <label className='form-label'>Note Title:</label>
-              <input className='form-control' type='text' valueLink={this.linkState('title')}/>
+           return (<option value={notebook.id} key={idx} className="mdl-menu__item">{notebook.title}</option>);
 
-           <label className='form-label'>Note Body:</label>
-           <textarea className='form-control' type='text' valueLink={this.linkState('body')}/>
+           */}
+
+           <label className='form-label'>
+             <br/>
+             Note Title:
+             <br/>
+             <br/>
+           </label>
+           <br/>
+           <br/>
+           <div className="mdl-textfield mdl-js-textfield" style={{left: '20%'}}>
+             <input className='form-control mdl-textfield__input' type='text' valueLink={this.linkState('title')}/>
+           </div>
+           <br/>
+           <br/>
+           <label className='form-label'>
+             <br/>
+             Note Body:
+             <br/>
+             <br/>
+           </label>
+           <br/>
+           <br/>
+           <div className="mdl-textfield mdl-js-textfield" style={{left: '20%'}}>
+             <textarea className='form-control mdl-textfield__input' type='text' valueLink={this.linkState('body')}/>
+           </div>
           </div>
 
-        <button type="submit" className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">Create Note</button>
+        <button id="create-note-button" type="submit" className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">Create Note</button>
+        <br/>
+        <br/>
+        <br/>
       </form>
     );
   }

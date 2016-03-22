@@ -20,10 +20,20 @@ var NoteBookForm = React.createClass({
     return(
       <form role='form' onSubmit={this.createNotebook}>
         <div className="notebook-form form-group">
-          <label className='form-label'>Notebook Title:</label>
-            <input className='form-control' type='text' valueLink={this.linkState('title')}/>
+          <label className='form-label'>
+            <br/>
+              Notebook Title:
+            <br/>
+            <br/>
+          </label>
+            <div className="mdl-textfield mdl-js-textfield">
+              <input className='mdl-textfield__input' type='text' valueLink={this.linkState('title')} id="notebook-title"/>
+              {/*<label className="mdl-textfield__label" htmlFor="notebook-title">Notebook Title</label>*/}
+            </div>
         </div>
         <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">Create Notebook</button>
+        <br/>
+        <br/>
       </form>
     );
   }

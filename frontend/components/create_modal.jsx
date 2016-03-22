@@ -31,14 +31,16 @@ var CreateModal = React.createClass({
             <i className="material-icons">add</i>
           </span>
         </button>
+        <div className="mdl-tooltip" htmlFor="animated-fab-button--create">Create Note</div>
         <ul>
           <li>
-            <button className="btn-floating mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-color--primary mdl-color-text--white mdl-js-ripple-effect" onClick={this.showModal}>
+            <button id="animated-fab-button--create-notebook" className="btn-floating mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-color--primary mdl-color-text--white mdl-js-ripple-effect" onClick={this.showModal}>
               <i className="material-icons">book</i>
               <Modal ref="modal">
                 <NotebookForm hideModal={this.hideModal}/>
               </Modal>
             </button>
+            <div className="mdl-tooltip" htmlFor="animated-fab-button--create-notebook">Create Note</div>
           </li>
         </ul>
       </div>

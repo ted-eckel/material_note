@@ -17,13 +17,24 @@
 
  .notes-index-item:hover {
    cursor: pointer;
-   background-color: gainsboro;
  }
  //
  // .notes-index-item:active {
  //   border: 10px solid black;
  //   border-right: 0px;
  // }
+
+ .notes-index-item:hover {
+  cursor: pointer;
+ }
+
+ .notes-index-item .trash {
+   display: none;
+ }
+
+ .notes-index-item:hover .trash {
+   display: inline;
+ }
 
  .all-notes-span {
    font-size: 21px;

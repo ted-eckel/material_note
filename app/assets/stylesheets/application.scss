@@ -287,6 +287,10 @@
   bottom: 15px !important;
 }
 
+#create-note-button {
+  left: 37.63%;
+}
+
 /*------------------------------------------------ */
 
 ul {
@@ -390,6 +394,10 @@ ul {
  width: 100%;
  border-right: none;
  border-left: none;
+ font-family: "Roboto", sans-serif;
+ font-size: 18px;
+ font-weight: 300;
+ text-align: center;
 }
 
 .form-control {
