@@ -12,6 +12,10 @@ NoteBookStore.all = function () {
   return _noteBooks.slice();
 };
 
+NoteBookStore.first = function () {
+  return _noteBooks.slice(0, 1);
+};
+
 NoteBookStore.addNotebook = function (notebook) {
   _noteBooks.push(notebook);
 };

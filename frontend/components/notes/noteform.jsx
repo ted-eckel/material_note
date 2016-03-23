@@ -31,6 +31,10 @@ var NoteForm = React.createClass({
               </option>);
     });
 
+    var NotebookDefaultValue = NotebookStore.first().map(function (notebook) {
+      return (notebook.id);
+    });
+
     return(
       <form role='form' onSubmit={this.createNote}>
 
@@ -43,7 +47,7 @@ var NoteForm = React.createClass({
          </label>
            <br/>
            <br/>
-           <select className='form-control' id="selectList" style={{width: '300px', margin: '0 auto'}}>
+           <select defaultValue={NotebookDefaultValue} className='form-control' id="selectList" style={{width: '300px', margin: '0 auto'}}>
              {NotebookDropDownOptions}
            </select>
            <br/>
