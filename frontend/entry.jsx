@@ -67,6 +67,12 @@ var routes = (
   </Route>
 );
 
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
-  ReactDOM.render(<Router>{routes}</Router>, document.getElementById('root'));
+  var root = document.getElementById('root');
+  if (root) {
+    ReactDOM.render(<Router>{routes}</Router>, document.getElementById('root'));
+  }
 });
