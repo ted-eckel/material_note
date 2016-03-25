@@ -136,7 +136,7 @@
    -webkit-margin-after: 1em;
    -webkit-margin-start: 0px;
    -webkit-margin-end: 0px;
-   -webkit-padding-start: 40px;
+  //  -webkit-padding-start: 40px;
  }
 
  li {
@@ -294,7 +294,7 @@
 .background-text-letterpress {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 400px;
   transform: translate(-50%, -50%);
   z-index: 0;
   color: #9e9e9e;
@@ -310,7 +310,11 @@
   max-width: 410px;
   min-width: 410px;
   cursor:default;
-  line-height: normal;
+  line-height: 130%;
+}
+
+.note-items-list {
+  -webkit-padding-start: 0;
 }
 
 /*------------------------------------------------ */

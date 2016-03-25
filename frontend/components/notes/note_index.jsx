@@ -61,7 +61,7 @@ var NoteIndex = React.createClass({
 
     return (
       <div>
-          <ul>
+          <ul className="note-items-list">
             {noteItems}
           </ul>
           <div>
