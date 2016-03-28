@@ -317,6 +317,22 @@
   -webkit-padding-start: 0;
 }
 
+.notebook-index-item-text {
+  padding: 12px;
+  display: inline-flex;
+  width: 179px;
+}
+
+.notes-index-item-text {
+  padding: 12px;
+  display: inline-flex;
+  width: 179px;
+}
+
+.centered-dropdown-options {
+  text-align: center;
+}
+
 /*------------------------------------------------ */
 
 ul {

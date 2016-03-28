@@ -47,9 +47,11 @@ var NoteForm = React.createClass({
          </label>
            <br/>
            <br/>
-           <select value={NotebookDefaultValue} className='form-control' id="selectList" style={{width: '300px', margin: '0 auto'}}>
-             {NotebookDropDownOptions}
-           </select>
+           <div className="centered-dropdown-options">
+             <select className='form-control' id="selectList" style={{width: '300px', margin: '0 auto'}}>
+               {NotebookDropDownOptions}
+             </select>
+           </div>
            <br/>
            <br/>
          {/*
