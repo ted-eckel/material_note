@@ -13,6 +13,9 @@ var ReactDOM = require('react-dom'),
     NoteFormModal = require('./components/notes/form_modal'),
     NotebookFormModal = require('./components/notebooks/notebook_form_modal');
 
+var injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
+
 var App = React.createClass({
   getInitialState: function () {
     return {value: ""};

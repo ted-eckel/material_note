@@ -12,10 +12,12 @@ var NoteIndexItem = React.createClass({
 
   render: function () {
     return (
-      <div className="notes-index-item" onClick={this.props.handleClick.bind(null, this.props.note)}>
-        <div className="notes-index-item-text">
-          <div>
-            <span>{this.props.note.title}</span>
+      <div className="notes-index-item">
+        <div className="enclose-text" onClick={this.props.handleClick.bind(null, this.props.note)}>
+          <div className="notes-index-item-text">
+            <div>
+              <span>{this.props.note.title}</span>
+            </div>
           </div>
         </div>
         <div onClick={this.deleteNote} className='trash'>

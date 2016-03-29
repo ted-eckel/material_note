@@ -15,12 +15,14 @@ var NotebookIndexItem = React.createClass({
       return <div></div>;
     }
     return (
-      <div className="notebook-index-item" onClick={this.props.handleClick.bind(null, this.props.notebook)}>
-        <div className="notebook-index-item-text">
-          <div>
-            <span>
-              {this.props.notebook.title}
-            </span>
+      <div className="notebook-index-item">
+        <div className="enclose-text" onClick={this.props.handleClick.bind(null, this.props.notebook)}>
+          <div className="notebook-index-item-text">
+            <div>
+              <span>
+                {this.props.notebook.title}
+              </span>
+            </div>
           </div>
         </div>
         <div onClick={this.deleteNotebook} className='trash'>
