@@ -3,6 +3,7 @@ var Modal = require('boron/OutlineModal');
 var NoteForm = require('./notes/noteform');
 var NotebookForm = require('./notebooks/notebookform');
 var NoteBookStore = require('../stores/notebook_store');
+var Tooltip = require('react-mdl/lib/Tooltip');
 
 var CreateModal = React.createClass({
   showModal: function () {
@@ -31,7 +32,7 @@ var CreateModal = React.createClass({
             <i className="material-icons">add</i>
           </span>
         </button>
-        <div className="mdl-tooltip" htmlFor="animated-fab-button--create">Create Note</div>
+        <div className="mdl-tooltip mdl-tooltip--left" htmlFor="animated-fab-button--create">Create Note</div>
         <ul>
           <li>
             <button id="animated-fab-button--create-notebook" className="btn-floating mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-color--primary mdl-color-text--white mdl-js-ripple-effect" onClick={this.showModal}>
@@ -40,7 +41,7 @@ var CreateModal = React.createClass({
                 <NotebookForm hideModal={this.hideModal}/>
               </Modal>
             </button>
-            <div className="mdl-tooltip" htmlFor="animated-fab-button--create-notebook">Create Note</div>
+
           </li>
         </ul>
       </div>

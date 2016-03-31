@@ -58,9 +58,7 @@ var NoteForm = React.createClass({
            <select className="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect form-control" id="selectList">
            {NotebookDropDownOptions}
            </select>
-
            return (<option value={notebook.id} key={idx} className="mdl-menu__item">{notebook.title}</option>);
-
            */}
 
            <label className='form-label'>
