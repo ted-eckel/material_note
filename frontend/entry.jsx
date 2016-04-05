@@ -3,6 +3,7 @@ var ReactDOM = require('react-dom'),
     ReactRouter = require('react-router'),
     Router = ReactRouter.Router,
     Route = ReactRouter.Route,
+    hashHistory = ReactRouter.hashHistory,
     NotebookIndex = require('./components/notebooks/notebook_index'),
     Sidebar = require('./components/sidebar'),
     AllNotes = require('./components/notes/all_notes'),
@@ -76,6 +77,6 @@ var routes = (
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById('root');
   if (root) {
-    ReactDOM.render(<Router>{routes}</Router>, root);
+    ReactDOM.render(<Router history={hashHistory}>{routes}</Router>, root);
   }
 });

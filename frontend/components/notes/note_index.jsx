@@ -4,10 +4,12 @@ var ApiUtil = require('../../util/api_util');
 var NoteForm = require('./noteform');
 var NoteIndexItem = require('./indexItem');
 var NoteShowPage = require('./note_show_page');
-var History = require('react-router').History;
+var browserHistory = require('react-router').browserHistory;
 
 var NoteIndex = React.createClass({
-  mixins: [History],
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
 
   getInitialState: function () {
     return({
@@ -38,7 +40,7 @@ var NoteIndex = React.createClass({
 
   selectNote: function (note) {
     var url = "notes/" + note.id;
-    this.history.pushState(null, url);
+    this.context.router.push(url);
   },
 
   unselectNote: function () {
