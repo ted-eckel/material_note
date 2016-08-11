@@ -264,6 +264,11 @@
 
 .mdl-layout__drawer-button {
   color: white !important;
+  -webkit-user-select: none;
+}
+
+.mdl-layout__drawer-button:focus {
+  outline: 0;
 }
 
 #floating-action-menu-thing {
@@ -504,6 +509,14 @@ ul {
   z-index: 1;
 }
 
+.mdl-layout__obfuscator.is-visible {
+  display: none !important;
+}
+
+.mdl-layout__header {
+  z-index: 6 !important;
+}
+
 .allnotes-container, .notebook-container,
 .allnotes-container.active, .notebook-container.active  {
   background-color: white;
@@ -547,4 +560,5 @@ ul {
 .top-of-notebook-index {
  text-align: right;
  padding-right: 15px;
+ padding-top: 64px;
 }
