@@ -11,7 +11,7 @@ and React.js. MaterialNote allows users to:
 - Apply complex styling to notes while editing
 
 ## Features
-Both notes and notebooks are stored on the sidebar
+Both notes and notebooks are displayed on the sidebar, while note editing is done in the react-quill
 
 ## Bonus Features (TBD)
 - [ ] Search through notes for blocks of text
