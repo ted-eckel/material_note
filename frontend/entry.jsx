@@ -52,13 +52,19 @@ var App = React.createClass({
           Welcome to MaterialNote!
           <br/>
           <br/>
-          To create a note, click the floating action button on the bottom-right,
+          In order to create a notebook, hover over the floating action button (
+            <i className="material-icons">add</i>
+          )
+          on the bottom-right, and click the notebook icon (
+            <i className="material-icons">book</i>
+          ). Then give your notebook a title!
+          <br/>
+          <br/>
+          To create a note, click the floating action button,
           select a notebook, and give your note a title and a body. Notes
-          can be edited by clicking them in the sidebar menu, within their respective notebook.
-          <br/>
-          <br/>
-          In order to create a notebook, hover over the floating action button
-          on the bottom-right, and click the notebook icon. Then give your notebook a title!
+          can be edited by selecting them from the sidebar menu (
+            <i className="material-icons">menu</i>
+          ), within their respective notebook.
         </div>
       </div>
     );
