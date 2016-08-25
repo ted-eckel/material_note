@@ -14,6 +14,8 @@ var ReactDOM = require('react-dom'),
     NoteFormModal = require('./components/notes/form_modal'),
     NotebookFormModal = require('./components/notebooks/notebook_form_modal');
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
 
@@ -25,47 +27,51 @@ var App = React.createClass({
   render: function(){
     return (
       <div>
-        <div className="sidebar-parent">
-          <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-            <header className="mdl-layout__header">
-              <div className="mdl-layout__header-row">
-                <span className="mdl-layout-title mdl-color-text--white">MaterialNote</span>
-                <div className="mdl-layout-spacer"></div>
+        <MuiThemeProvider>
+          <div>
+            <div className="sidebar-parent">
+              <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                <header className="mdl-layout__header">
+                  <div className="mdl-layout__header-row">
+                    <span className="mdl-layout-title mdl-color-text--white">MaterialNote</span>
+                    <div className="mdl-layout-spacer"></div>
+                  </div>
+                </header>
+                <div className="mdl-layout__drawer">
+                  <Slideout/>
+                </div>
               </div>
-            </header>
-            <div className="mdl-layout__drawer">
-              <Slideout/>
+              <Sidebar/>
+              <div id="floating-action-menu-thing" className="fixed-action-btn">
+                <NoteFormModal/>
+                <ul>
+                  <li><NotebookFormModal/></li>
+                </ul>
+              </div>
+              <div className='container group'>
+                {this.props.children}
+              </div>
+            </div>
+            <div className="background-text-letterpress">
+              Welcome to MaterialNote!
+              <br/>
+              <br/>
+              In order to create a notebook, hover over the floating action button (
+                <i className="material-icons">add</i>
+              )
+              on the bottom-right, and click the notebook icon (
+                <i className="material-icons">book</i>
+              ). Then give your notebook a title!
+              <br/>
+              <br/>
+              To create a note, click the floating action button,
+              select a notebook, and give your note a title and a body. Notes
+              can be edited by selecting them from the sidebar menu (
+                <i className="material-icons">menu</i>
+              ), within their respective notebook.
             </div>
           </div>
-          <Sidebar/>
-          <div id="floating-action-menu-thing" className="fixed-action-btn">
-            <NoteFormModal/>
-            <ul>
-              <li><NotebookFormModal/></li>
-            </ul>
-          </div>
-          <div className='container group'>
-            {this.props.children}
-          </div>
-        </div>
-        <div className="background-text-letterpress">
-          Welcome to MaterialNote!
-          <br/>
-          <br/>
-          In order to create a notebook, hover over the floating action button (
-            <i className="material-icons">add</i>
-          )
-          on the bottom-right, and click the notebook icon (
-            <i className="material-icons">book</i>
-          ). Then give your notebook a title!
-          <br/>
-          <br/>
-          To create a note, click the floating action button,
-          select a notebook, and give your note a title and a body. Notes
-          can be edited by selecting them from the sidebar menu (
-            <i className="material-icons">menu</i>
-          ), within their respective notebook.
-        </div>
+        </MuiThemeProvider>
       </div>
     );
   }

@@ -2,12 +2,14 @@ var React = require('react');
 var NoteBookStore = require('../../stores/notebook_store');
 var ApiUtil = require('../../util/api_util');
 var NotebookFormModal = require('./notebook_form_modal');
-var NotebookIndexItem = require('./indexItem');
 var NoteIndex = require('../notes/note_index');
 var AppDispatcher = require('../../dispatcher/dispatcher');
 var SHOW_CONSTANTS = require('../../constants/show_constants');
 var ShowStore = require('../../stores/show_store');
 var AllNotes = require('../notes/all_notes');
+
+import NotebookIndexItem from './indexItem';
+
 var NotebookIndex = React.createClass({
 
   getInitialState: function () {

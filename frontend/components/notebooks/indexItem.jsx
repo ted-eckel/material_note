@@ -1,16 +1,47 @@
-var React = require('react');
-var ApiUtil = require('../../util/api_util');
+import React from 'react';
+import ApiUtil from '../../util/api_util';
+import FlatButton from 'material-ui/FlatButton';
+import Dialog from 'material-ui/Dialog';
 
-var NotebookIndexItem = React.createClass({
-  deleteNotebook: function (e) {
+
+export default class NotebookIndexItem extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {open: false};
+  }
+
+  handleOpen = () => {
+    this.setState({open: true});
+  }
+
+  handleClose = () => {
+    this.setState({open: false});
+  }
+
+  deleteNotebook = (e) => {
     e.preventDefault();
-    var answer = confirm("Are you sure you want to delete this notebook?");
-    if (answer) {
-      ApiUtil.deleteNotebook(this.props.notebook);
-    }
-  },
+    ApiUtil.deleteNotebook(this.props.notebook);
+  }
 
-  render: function () {
+  render() {
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+        style={{color: 'rgb(76, 175, 80)'}}
+      />,
+      <FlatButton
+        label="Delete"
+        primary={true}
+        onTouchTap={
+          this.handleClose}
+        onClick={this.deleteNotebook}
+        style={{color: 'rgb(76, 175, 80)'}}
+      />,
+    ];
+
     if (!this.props.notebook) {
       return <div></div>;
     }
@@ -25,12 +56,18 @@ var NotebookIndexItem = React.createClass({
             </div>
           </div>
         </div>
-        <div onClick={this.deleteNotebook} className='trash'>
+        <div onClick={this.handleOpen} className='trash'>
           <i className="material-icons">delete</i>
         </div>
+        <Dialog
+          actions={actions}
+          modal={false}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+        >
+          Are you sure you want to delete this notebook?
+        </Dialog>
       </div>
     );
   }
-});
-
-module.exports = NotebookIndexItem;
+}
