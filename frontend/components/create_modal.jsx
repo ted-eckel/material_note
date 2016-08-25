@@ -1,7 +1,6 @@
 var React = require('react');
 var Modal = require('boron/OutlineModal');
 var NoteForm = require('./notes/noteform');
-var NotebookForm = require('./notebooks/notebookform');
 var NoteBookStore = require('../stores/notebook_store');
 var Tooltip = require('react-mdl/lib/Tooltip');
 

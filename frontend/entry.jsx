@@ -10,9 +10,9 @@ var ReactDOM = require('react-dom'),
     NoteIndex = require('./components/notes/note_index'),
     ReactQuill = require("../node_modules/react-quill"),
     NoteShowPage = require('./components/notes/note_show_page'),
-    Slideout = require('./components/slideout'),
-    NoteFormModal = require('./components/notes/form_modal');
+    Slideout = require('./components/slideout');
 
+import NoteFormModal from './components/notes/form_modal';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NotebookFormModal from './components/notebooks/notebook_form_modal';
 

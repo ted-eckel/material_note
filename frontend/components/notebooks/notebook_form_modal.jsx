@@ -62,7 +62,13 @@ export default class NotebookFormModal extends React.Component {
           contentStyle={{width: '305px', textAlign: 'center'}}
           actionsContainerStyle={{textAlign: 'center'}}
           >
-          <TextField floatingLabelText="Notebook title" id="notebook-title" value={this.state.value} onChange={this.handleChange} underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} autoComplete="off"/>
+          <TextField floatingLabelText="Notebook title"
+                     id="notebook-title"
+                     value={this.state.value}
+                     onChange={this.handleChange}
+                     underlineFocusStyle={styles.underlineStyle}
+                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                     autoComplete="off"/>
         </Dialog>
       </div>
     );
