@@ -61,7 +61,7 @@ export default class NoteFormModal extends React.Component {
 
     const actions = [
       <FlatButton
-        label="Create Notebook"
+        label="Create Note"
         style={{color: 'rgb(76, 175, 80)'}}
         onTouchTap={this.createNote}
       />,
