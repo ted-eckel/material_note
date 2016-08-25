@@ -64,6 +64,7 @@ export default class NotebookIndexItem extends React.Component {
           modal={false}
           open={this.state.open}
           onRequestClose={this.handleClose}
+          contentStyle={{width: '385px', textAlign: 'center'}}
         >
           Are you sure you want to delete this notebook?
         </Dialog>

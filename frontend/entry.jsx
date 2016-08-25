@@ -11,10 +11,10 @@ var ReactDOM = require('react-dom'),
     ReactQuill = require("../node_modules/react-quill"),
     NoteShowPage = require('./components/notes/note_show_page'),
     Slideout = require('./components/slideout'),
-    NoteFormModal = require('./components/notes/form_modal'),
-    NotebookFormModal = require('./components/notebooks/notebook_form_modal');
+    NoteFormModal = require('./components/notes/form_modal');
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import NotebookFormModal from './components/notebooks/notebook_form_modal';
 
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
