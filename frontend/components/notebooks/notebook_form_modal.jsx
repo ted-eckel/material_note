@@ -41,7 +41,8 @@ var NotebookFormModal = React.createClass({
           onRequestClose={this.handleClose}
           style={{
             textalign: 'center'
-          }}>
+          }}
+          contentStyle={{width: '355px'}}>
           <form role='form' onSubmit={this.createNotebook}>
             <div className="notebook-form form-group">
                   Notebook Title:

@@ -56,13 +56,15 @@ var NoteFormModal = React.createClass({
             onRequestClose={this.handleClose}
             style={{
               textalign: 'center'
-            }}>
+            }}
+            contentStyle={{width: '353px'}}>
             <form role='form' onSubmit={this.createNote}>
 
               <div className='form-group'>
 
                  Notebook:
-                 <div className="centered-dropdown-options">
+                 <br/>
+                 <div className="mdl-selectfield">
                    <select className='form-control' id="selectList" style={{width: '300px', margin: '0 auto'}}>
                      {NotebookDropDownOptions}
                    </select>
@@ -78,7 +80,8 @@ var NoteFormModal = React.createClass({
 
 
                    Note Title:
-                 <div className="mdl-textfield mdl-js-textfield" style={{left: '20%'}}>
+                   <br/>
+                 <div className="mdl-textfield mdl-js-textfield">
                    <input className='form-control mdl-textfield__input' type='text' valueLink={this.linkState('title')}/>
                  </div>
                  <br/>
@@ -86,7 +89,7 @@ var NoteFormModal = React.createClass({
 
                    Note Body:
                    <br/>
-                 <div className="mdl-textfield mdl-js-textfield" style={{left: '20%'}}>
+                 <div className="mdl-textfield mdl-js-textfield">
                    <textarea className='form-control mdl-textfield__input' type='text' valueLink={this.linkState('body')}/>
                  </div>
                 </div>
