@@ -5,16 +5,15 @@ var ReactDOM = require('react-dom'),
     Route = ReactRouter.Route,
     hashHistory = ReactRouter.hashHistory,
     NotebookIndex = require('./components/notebooks/notebook_index'),
-    Sidebar = require('./components/sidebar'),
     AllNotes = require('./components/notes/all_notes'),
     NoteIndex = require('./components/notes/note_index'),
     ReactQuill = require("../node_modules/react-quill"),
     NoteShowPage = require('./components/notes/note_show_page'),
-    Slideout = require('./components/slideout');
+    NoteFormModal = require('./components/notes/form_modal'),
+    NotebookFormModal = require('./components/notebooks/notebook_form_modal');
 
-import NoteFormModal from './components/notes/form_modal';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import NotebookFormModal from './components/notebooks/notebook_form_modal';
+
 
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
@@ -29,7 +28,7 @@ var App = React.createClass({
       <div>
         <MuiThemeProvider>
           <div>
-            <div className="sidebar-parent">
+            <div>
               <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
                 <header className="mdl-layout__header">
                   <div className="mdl-layout__header-row">
@@ -38,10 +37,9 @@ var App = React.createClass({
                   </div>
                 </header>
                 <div className="mdl-layout__drawer">
-                  <Slideout/>
+                  <NotebookIndex/>
                 </div>
               </div>
-              <Sidebar/>
               <div id="floating-action-menu-thing" className="fixed-action-btn">
                 <NoteFormModal/>
                 <ul>
@@ -68,7 +66,7 @@ var App = React.createClass({
               select a notebook, and give your note a title and a body. Notes
               can be edited by selecting them from the sidebar menu (
                 <i className="material-icons">menu</i>
-              ), within their respective notebook.
+              ) within their respective notebook.
             </div>
           </div>
         </MuiThemeProvider>

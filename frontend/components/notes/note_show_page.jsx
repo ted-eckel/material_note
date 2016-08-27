@@ -1,6 +1,7 @@
 var React = require('react');
 var NoteStore = require('../../stores/note_store');
 var ApiUtil = require('../../util/api_util');
+// var ReactQuill = require("../../../node_modules/react-quill");
 var ReactQuill = require("react-quill");
 
 import Snackbar from 'material-ui/Snackbar';

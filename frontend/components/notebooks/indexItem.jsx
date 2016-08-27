@@ -1,30 +1,29 @@
-import React from 'react';
-import ApiUtil from '../../util/api_util';
-import FlatButton from 'material-ui/FlatButton';
+var React = require('react'),
+    ApiUtil = require('../../util/api_util');
+
 import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 
+var NotebookIndexItem = React.createClass({
 
-export default class NotebookIndexItem extends React.Component {
+  getInitialState: function () {
+    return ({open: false});
+  },
 
-  constructor() {
-    super();
-    this.state = {open: false};
-  }
-
-  handleOpen = () => {
+  handleOpen: function() {
     this.setState({open: true});
-  }
+  },
 
-  handleClose = () => {
+  handleClose: function() {
     this.setState({open: false});
-  }
+  },
 
-  deleteNotebook = (e) => {
+  deleteNotebook: function (e) {
     e.preventDefault();
     ApiUtil.deleteNotebook(this.props.notebook);
-  }
+  },
 
-  render() {
+  render: function () {
     const actions = [
       <FlatButton
         label="Cancel"
@@ -64,11 +63,12 @@ export default class NotebookIndexItem extends React.Component {
           modal={false}
           open={this.state.open}
           onRequestClose={this.handleClose}
-          contentStyle={{width: '385px', textAlign: 'center'}}
         >
           Are you sure you want to delete this notebook?
         </Dialog>
       </div>
     );
   }
-}
+});
+
+module.exports = NotebookIndexItem;
