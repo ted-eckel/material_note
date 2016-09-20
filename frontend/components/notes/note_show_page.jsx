@@ -1,9 +1,9 @@
 var React = require('react');
-var NoteStore = require('../../stores/note_store');
-var ApiUtil = require('../../util/api_util');
-// var ReactQuill = require("../../../node_modules/react-quill");
-var ReactQuill = require("react-quill");
 
+var NoteStore = require('../../stores/note_store');
+var NoteActions = require('../../actions/note_actions');
+
+var ReactQuill = require("react-quill");
 import Snackbar from 'material-ui/Snackbar';
 
 var NoteShowPage = React.createClass({
@@ -37,7 +37,7 @@ var NoteShowPage = React.createClass({
   },
 
   saveChanges: function () {
-    ApiUtil.updateNote(this.state.note);
+    NoteActions.updateNote(this.state.note);
   },
 
   handleTouchTap: function() {

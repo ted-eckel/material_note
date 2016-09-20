@@ -1,5 +1,5 @@
 var React = require('react'),
-    ApiUtil = require('../../util/api_util');
+    NoteActions = require('../../actions/note_actions');
 
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
@@ -20,7 +20,7 @@ var NoteIndexItem = React.createClass({
 
   deleteNote: function(e) {
     e.preventDefault();
-    ApiUtil.deleteNote(this.props.note);
+    NoteActions.deleteNote(this.props.note);
   },
 
   render: function () {

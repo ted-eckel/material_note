@@ -1,7 +1,0 @@
-var NotebookConstants = {
-  ALL_NOTEBOOKS_RECEIVED: "ALL_NOTEBOOKS_RECEIVED",
-  NOTEBOOK_ADDED: "NOTEBOOK_ADDED",
-  DELETE_NOTEBOOK: "DELETE_NOTEBOOK"
-};
-
-module.exports = NotebookConstants;

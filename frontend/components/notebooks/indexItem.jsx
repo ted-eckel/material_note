@@ -1,5 +1,5 @@
 var React = require('react'),
-    ApiUtil = require('../../util/api_util');
+    NotebookActions = require('../../actions/notebook_actions');
 
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
@@ -20,7 +20,7 @@ var NotebookIndexItem = React.createClass({
 
   deleteNotebook: function (e) {
     e.preventDefault();
-    ApiUtil.deleteNotebook(this.props.notebook);
+    NotebookActions.deleteNotebook(this.props.notebook);
   },
 
   render: function () {
