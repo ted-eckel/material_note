@@ -1,33 +1,17 @@
-var AppDispatcher = require('../dispatcher/dispatcher');
-var NoteConstants = require('../constants/note_constants');
+var ApiUtil = require('../util/api_util');
 
 var NoteActions = {
-  receiveNotes: function (notes) {
-    AppDispatcher.dispatch({
-      actionType: NoteConstants.ALL_NOTES_RECEIVED,
-      notes: notes
-    });
+  fetchNotes: function(id){
+    ApiUtil.fetchNotes(id);
   },
-
-  addNote: function (note) {
-    AppDispatcher.dispatch({
-      actionType: NoteConstants.NOTE_CREATED,
-      note: note
-    });
+  createNote: function(note){
+    ApiUtil.createNote(note);
   },
-
-  updateNote: function (note) {
-    AppDispatcher.dispatch({
-      actionType: NoteConstants.NOTE_UPDATED,
-      note: note
-    });
+  updateNote: function(note){
+    ApiUtil.updateNote(note);
   },
-
-  deleteNote: function (note) {
-    AppDispatcher.dispatch({
-      actionType: NoteConstants.NOTE_DELETED,
-      note: note
-    });
+  deleteNote: function(note){
+    ApiUtil.deleteNote(note);
   }
 };
 

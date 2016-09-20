@@ -1,8 +1,0 @@
-var NoteConstants = {
-  NOTE_CREATED: "NOTE_CREATED",
-  ALL_NOTES_RECEIVED: "ALL_NOTES_RECEIVED",
-  NOTE_UPDATED: "NOTE_UPDATED",
-  NOTE_DELETED: "NOTE_DELETED"
-};
-
-module.exports = NoteConstants;

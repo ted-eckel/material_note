@@ -5,12 +5,11 @@ var ReactDOM = require('react-dom'),
     Route = ReactRouter.Route,
     hashHistory = ReactRouter.hashHistory,
     NotebookIndex = require('./components/notebooks/notebook_index'),
-    AllNotes = require('./components/notes/all_notes'),
-    NoteIndex = require('./components/notes/note_index'),
-    ReactQuill = require("../node_modules/react-quill"),
     NoteShowPage = require('./components/notes/note_show_page'),
     NoteFormModal = require('./components/notes/form_modal'),
-    NotebookFormModal = require('./components/notebooks/notebook_form_modal');
+    NotebookFormModal = require('./components/notebooks/notebook_form_modal'),
+    NotebookStore = require('./stores/notebook_store'),
+    NotebookActions = require('./actions/notebook_actions');
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -20,7 +19,9 @@ injectTapEventPlugin();
 
 var App = React.createClass({
   getInitialState: function () {
-    return {value: ""};
+    return ({
+      value: "",
+    });
   },
 
   render: function(){

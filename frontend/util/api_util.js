@@ -1,5 +1,5 @@
-var NoteActions = require('../actions/note_actions');
-var NotebookActions = require('../actions/notebook_actions');
+var NoteServerActions = require('../actions/note_server_actions');
+var NotebookServerActions = require('../actions/notebook_server_actions');
 
 var ApiUtil = {
   fetchNotes: function (id) {
@@ -12,7 +12,7 @@ var ApiUtil = {
       data: {notebook_id: id},
       dataType: "json",
       success: function (notes) {
-        NoteActions.receiveNotes(notes);
+        NoteServerActions.receiveNotes(notes);
       }
     });
   },
@@ -23,7 +23,7 @@ var ApiUtil = {
       type: "GET",
       dataType: "json",
       success: function (notebooks) {
-        NotebookActions.receiveAllNotebooks(notebooks);
+        NotebookServerActions.receiveAllNotebooks(notebooks);
       }
     });
   },
@@ -34,7 +34,7 @@ var ApiUtil = {
       type: "POST",
       data: {notebook: notebook},
       success: function (newNotebook) {
-        NotebookActions.addNotebook(newNotebook);
+        NotebookServerActions.addNotebook(newNotebook);
       }
     });
   },
@@ -45,7 +45,7 @@ var ApiUtil = {
       type: "POST",
       data: {note: note, notebook_id: note.notebook_id},
       success: function (newNote) {
-        NoteActions.addNote(newNote);
+        NoteServerActions.addNote(newNote);
       }
     });
   },
@@ -57,7 +57,7 @@ var ApiUtil = {
       type: "PATCH",
       data: {note: note},
       success: function (newNote) {
-        NoteActions.updateNote(newNote);
+        NoteServerActions.updateNote(newNote);
       }
     });
   },
@@ -67,7 +67,7 @@ var ApiUtil = {
       url: "/api/notes/" + note.id,
       type: "DELETE",
       success: function (id) {
-        NoteActions.deleteNote(id);
+        NoteServerActions.deleteNote(id);
       }
     });
   },
@@ -77,7 +77,7 @@ var ApiUtil = {
       url: "/api/notebooks/" + notebook.id,
       type: "DELETE",
       success: function (id) {
-        NotebookActions.deleteNotebook(id);
+        NotebookServerActions.deleteNotebook(id);
       }
     });
   },

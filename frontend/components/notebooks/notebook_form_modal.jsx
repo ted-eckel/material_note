@@ -1,7 +1,6 @@
 var React = require('react');
-var NotebookForm = require('./notebookform');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var ApiUtil = require('../../util/api_util');
+var NotebookActions = require('../../actions/notebook_actions');
 
 import Dialog from 'material-ui/Dialog';
 
@@ -24,7 +23,7 @@ var NotebookFormModal = React.createClass({
 
   createNotebook: function(e){
     e.preventDefault();
-    ApiUtil.createNotebook({title: this.state.title});
+    NotebookActions.createNotebook({title: this.state.title});
     this.setState({title: ''});
     this.handleClose();
   },

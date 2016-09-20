@@ -1,7 +1,6 @@
 var React = require('react');
 var NoteStore = require('../../stores/note_store');
-var ApiUtil = require('../../util/api_util');
-var NoteForm = require('./noteform');
+var NoteActions = require('../../actions/note_actions');
 var NoteIndexItem = require('./indexItem');
 var NoteShowPage = require('./note_show_page');
 var browserHistory = require('react-router').browserHistory;
@@ -23,7 +22,7 @@ var NoteIndex = React.createClass({
   },
 
   componentDidMount: function () {
-    ApiUtil.fetchNotes(this.props.notebook.id);
+    NoteActions.fetchNotes(this.props.notebook.id);
   },
 
   componentWillUnmount: function () {
@@ -31,7 +30,7 @@ var NoteIndex = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
-    ApiUtil.fetchNotes(newProps.notebook.id);
+    NoteActions.fetchNotes(newProps.notebook.id);
   },
 
   _onChange: function () {
