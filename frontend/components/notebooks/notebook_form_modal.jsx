@@ -1,16 +1,19 @@
 var React = require('react');
-var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var NotebookActions = require('../../actions/notebook_actions');
 
 import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import TextField from 'material-ui/TextField';
 
 var NotebookFormModal = React.createClass({
-  mixins: [LinkedStateMixin],
 
   getInitialState: function () {
     return ({open: false,
-            title: "",
-            description: ""});
+            title: ""});
+  },
+
+  inputTitleChanged: function(e){
+    this.setState({title: e.target.value});
   },
 
   handleOpen: function() {
@@ -43,15 +46,14 @@ var NotebookFormModal = React.createClass({
           }}
           contentStyle={{width: '355px'}}>
           <form role='form' onSubmit={this.createNotebook}>
-            <div className="notebook-form form-group">
-                  Notebook Title:
-                  <br/>
-                <div className="mdl-textfield mdl-js-textfield">
-                  <input className='mdl-textfield__input' type='text' valueLink={this.linkState('title')} id="notebook-title"/>
-                  {/*<label className="mdl-textfield__label" htmlFor="notebook-title">Notebook Title</label>*/}
-                </div>
-            </div>
-            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">Create Notebook</button>
+            <TextField floatingLabelText="Notebook title"
+              underlineFocusStyle={{borderColor: 'rgb(76, 175, 80)'}}
+              floatingLabelFocusStyle={{color: 'rgb(76, 175, 80)'}}
+              value={this.state.title} onChange={this.inputTitleChanged}
+              style={{display: 'block', margin: '0 auto'}} />
+            <FlatButton type="submit" label="Create Notebook"
+              primary={true}
+              style={{color: 'rgb(76, 175, 80)', display: 'block', margin: '0 auto'}} />
           </form>
         </Dialog>
       </div>

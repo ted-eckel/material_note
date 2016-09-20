@@ -1,6 +1,6 @@
 var React = require('react');
 var NotebookStore = require('../../stores/notebook_store');
-var LinkedStateMixin = require('react-addons-linked-state-mixin');
+
 var NoteActions = require('../../actions/note_actions');
 var NotebookActions = require('../../actions/notebook_actions');
 
@@ -66,11 +66,6 @@ var NoteFormModal = React.createClass({
   },
 
   render: function () {
-    {/*var NotebookDropDownOptions = this.state.notebooks.map(function (notebook, idx) {
-      return (<option value={notebook.id}
-                      key={idx}>{notebook.title}
-              </option>);
-    });*/}
 
     var NotebookDropDownOptions = this.state.notebooks.map(function (notebook, idx) {
       return (<MenuItem
@@ -86,11 +81,12 @@ var NoteFormModal = React.createClass({
     var createNoteButtonEnabled = (
       <FlatButton type="submit" label="Create Note"
         primary={true} id="create-note-button"
-        style={{color: 'rgb(76, 175, 80)'}} />
+        style={{color: 'rgb(76, 175, 80)', display: 'block', margin: '0 auto'}} />
     );
     var createNoteButtonDisabled = (
       <FlatButton label="Create Note" id="create-note-button"
-        disabled={true} />
+        disabled={true}
+        style={{display: 'block', margin: '0 auto'}} />
     );
     var createNoteButton = (isNull ? createNoteButtonDisabled : createNoteButtonEnabled);
 
@@ -138,13 +134,6 @@ var NoteFormModal = React.createClass({
 
               <div className='form-group'>
 
-                 {/*Notebook:
-                 <br/>
-                 <div className="mdl-selectfield">
-                   <select onChange={this.inputNotebookChanged} className='form-control' id="selectList" style={{width: '300px', margin: '0 auto'}}>
-                     {NotebookDropDownOptions}
-                   </select>
-                 </div>*/}
                  <SelectField
                    value={this.state.notebook_id}
                    onChange={this.inputNotebookChanged}
@@ -159,27 +148,14 @@ var NoteFormModal = React.createClass({
                  <br/>
                  <br/>
 
-                   {/*Note Title:
-                   <br/>
-                 <div className="mdl-textfield mdl-js-textfield">
-                   <input className='form-control mdl-textfield__input' type='text' value={this.state.title} onChange={this.inputTitleChanged}/>
-                 </div>*/}
                  {noteTitle}
                  <br/>
                  <br/>
 
-                   {/*Note Body:
-                   <br/>
-                 <div className="mdl-textfield mdl-js-textfield">
-                   <textarea className='form-control mdl-textfield__input' type='text' value={this.state.body} onChange={this.inputBodyChanged}/>
-                 </div>*/}
                  {noteBody}
                 </div>
                 <br/>
               {createNoteButton}
-              {/*<button id="create-note-button" type="submit" className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color-text--white mdl-js-ripple-effect">Create Note</button>*/}
-              <br/>
-              <br/>
             </form>
           </Dialog>
           <button
