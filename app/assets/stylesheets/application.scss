@@ -555,6 +555,18 @@ ul {
   z-index: 1;
 }
 
+.editor .ql-toolbar {
+	box-shadow: 0 1px 10px rgba(0, 0, 0, .1);
+}
+
+.editor .ql-editor {
+	padding: 1rem;
+}
+
+// .editor .ql-tooltip.ql-image-tooltip {
+// 	float: none;
+// }
+
 .mdl-layout__obfuscator.is-visible {
   display: none !important;
 }
@@ -580,9 +592,9 @@ ul {
 //  cursor: pointer;
 // }
 
-.ql-snow.ql-toolbar .ql-picker .ql-picker-label.ql-active, .ql-snow.ql-toolbar .ql-picker .ql-picker-label:hover {
-  color: black;
-}
+// .ql-snow.ql-toolbar .ql-picker .ql-picker-label.ql-active, .ql-snow.ql-toolbar .ql-picker .ql-picker-label:hover {
+//   color: black;
+// }
 
 .fa-trash {
  padding-top: 8px;
